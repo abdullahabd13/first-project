@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+
+<title>على باب الخلود</title>
+
+<style>
+    
+body {
+  margin: 0;
+font-family: "Cairo", sans-serif;
+  background: #111;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.door {
+  width: 90px;
+  height: 180px;
+  background: #222;
+  margin-bottom: 40px;
+  transition: all 1.5s ease;
+}
+
+.hero.active .door {
+  transform: scaleX(1.4);
+  background: white;
+  box-shadow: 0 0 80px white;
+}
+
+/* TEXT SWITCH */
+.hero-text {
+  font-size: 1.8rem;
+  text-align: center;
+  transition: all 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STICKY BANNER */
+.banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 1000;
+}
+
+.banner.show {
+  opacity: 40;
+}
+
+/* WHITE SECTION */
+.white-section {
+  min-height: 200vh;
+  background: #f5f5f5;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE */
+.image {
+  width: 80%;
+  max-width: 500px;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+  border-radius: 12px;
+}
+
+.image.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STORY */
+.story {
+  width: 85%;
+  max-width: 700px;
+  text-align: center;
+  line-height: 2.2;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.story.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-footer {
+  background: #0d0d0d;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* This keeps the video responsive (important) */
+.vid-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  margin-top: 20px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Prevent users from dragging images */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none; 
+}
+
+/* Content hidden overlay */
+body.content-hidden > * {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.content-hidden::before {
+  content: "Content hidden for protection. Return to window to view.";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-color: #f7f9fc;
+  color: #333;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 999999;
+  opacity: 1 !important;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BANNER -->
+<div class="banner" id="banner">
+على باب الخلود
+</div>
+-
+<!-- HERO -->
+<section class="hero">
+  <div class="door"></div>
+  <div class="hero-text fade-in" id="heroText">
+    ليسَ كُـل باب.. يُفتح
+  </div>
+</section>
+
+<!-- WHITE SECTION -->
+<section class="white-section">
+
+  <img class="image" src="assets/pictures/IMG_20260417_182854_766.jpg.jpeg" alt="Artwork" onerror="this.onerror=null; this.src='https://via.placeholder.com/500x700?text=Image+Not+Found';">
+
+  <div class="story">
+<p>
+تمثل هذه اللوحة مشهدًا رمزيًا يجسّد لحظة لقاء السيدة زينب عليها السلام بالإمام الحسين عليه السلام في الجنة، بعد رحلةٍ طويلة من الألم والصبر.
+</p>
+<p>
+يظهر في مركز اللوحة بابٌ ذو طابع زخرفي، يرمز إلى باب الجنة، وقد تم التأكيد على قدسيته باستخدام تفاصيل ذهبية تعكس النور والخلود. تقف السيدة زينب أمام هذا الباب في وضعية دخول، في إشارة إلى انتقالها من عالم المعاناة إلى عالم السلام الأبدي.
+تحيط بها مجموعة من الحمامات البيضاء، والتي تمثل أرواح الشهداء من واقعة الطف، مثل عبد الله الرضيع، وعلي الأكبر، وأبي الفضل العباس، والإمام السجاد عليهم السلام، حيث تظهر كرمزٍ للنقاء والاستقبال الروحي.
+</p>
+في الجزء العلوي من اللوحة، يظهر حصانٌ في حالة حركة، وهو رمزٌ لذاكرة المعركة، بينما يتجلى الإمام الحسين عليه السلام بشكلٍ ظليّ ممزوجٍ بالدم، في دلالة على الشهادة، حيث لا يُعرض الألم كمعاناة فقط، بل كطريقٍ نحو الخلود.
+<p>
+من الناحية التقنية، تم استخدام خامات متعددة، منها مادة البناء (البورك/الجبس) لإضفاء ملمسٍ خشن يعكس قسوة الواقع، إلى جانب عجينة الرسم على القماش (الكانفاس) لبناء الأبعاد، مع استخدام الشرائح الذهبية لتحديد تفاصيل الباب وإبراز طابعه المقدّس.
+العمل ككل يمثل انتقالًا بصريًا وروحيًا من الألم إلى الطمأنينة، ومن الفقد إلى اللقاء.
+</p>
+</div>
+
+</section>
+<footer class="site-footer">
+<div class="footer-content">
+<p>
+قصيدة <a href="https://www.youtube.com/watch?v=24k_JMbdjQg">( لو نويت تروح)</a> لباسم الكربلائي
+</p>
+<p>
+اختيرت لتكون جزء من هذا العمل الفني
+القاءها وجزء من كلماتها تمثل لحظة لقاء السيدة زينب والامام الحسين عليهما السلام بعد فراق طويل في رحاب الجنة
+</p>
+
+<div class="vid-wrapper">
+<a href="https://www.youtube.com/embed/watch?v=24k_JMbdjQg"
+></a>
+</div>
+</div>
+</footer>
+
+<script>
+const hero = document.querySelector(".hero");
+const heroText = document.getElementById("heroText");
+const banner = document.getElementById("banner");
+const image = document.querySelector(".image");
+const story = document.querySelector(".story");
+
+// HERO ANIMATION
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    hero.classList.add("active");
+  }, 300);
+
+  // text switch
+  setTimeout(() => {
+    heroText.classList.add("fade-out");
+
+    setTimeout(() => {
+      heroText.innerText = "بابٌ من نور.. يُمثل العبور الى الجنة";
+      heroText.classList.remove("fade-out");
+      heroText.classList.add("fade-in");
+    }, 500);
+
+  }, 2000);
+});
+
+// SCROLL
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  // show banner after leaving hero
+  if (scrollY > window.innerHeight * 0.3) {
+    banner.classList.add("show");
+  }
+
+  const imgRect = image.getBoundingClientRect();
+  const storyRect = story.getBoundingClientRect();
+
+  if (imgRect.top < window.innerHeight * 0.8) {
+    image.classList.add("active");
+  }
+
+  if (storyRect.top < window.innerHeight * 0.7) {
+    story.classList.add("active");
+  }
+});
+
+// CONTENT PROTECTION SCRIPT
+(function() {
+    // 1. TARGETED Right-Click Prevention (Only for Images)
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target && e.target.tagName.toLowerCase() === 'img') {
+            e.preventDefault(); 
+        }
+    });
+
+    // 2. Prevent Common Keyboard Shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Prevent F12, Inspect, View Source
+        if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); }
+        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); }
+        if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); }
+
+        // Detect Print Screen Key
+        if (e.key === 'PrintScreen' || e.keyCode === 44) {
+            e.preventDefault();
+            navigator.clipboard.writeText('Screenshots blocked.').catch(err => {});
+            hideContent();
+        }
+    });
+
+    document.addEventListener('keyup', function(e) {
+        if (e.key === 'PrintScreen' || e.keyCode === 44) {
+            navigator.clipboard.writeText('Screenshots blocked.').catch(err => {});
+        }
+    });
+
+    // 3. Detect Tab Switching and Window Focus Loss
+    function hideContent() { document.body.classList.add('content-hidden'); }
+    function showContent() { document.body.classList.remove('content-hidden'); }
+
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) hideContent();
+        else showContent();
+    });
+
+    window.addEventListener('blur', hideContent);
+    window.addEventListener('focus', showContent);
+})();
+</script>
+
+</body>
+</html>
